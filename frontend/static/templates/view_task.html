@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Tarefas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Lista de Tarefas</h1>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome da Tarefa</th>
+                    <th>Descrição</th>
+                    <th>Data de Criação</th>
+                    <th>Prazo</th>
+                    <th>Concluída</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td>{{ task.taskName }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.creationDateTime }}</td>
+                    <td>{{ task.deadline }}</td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="task_{{ task.id }}" {% if task.concluida %}checked{% endif %}>
+                            <label class="form-check-label" for="task_{{ task.id }}">Concluída</label>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn btn-primary btn-sm me-2">Editar</a>
+                        <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('add_task') }}" class="btn btn-primary">Adicionar Nova Tarefa</a>
+        <a href="{{ url_for('index') }}" class="btn btn-success">Ir para a home</a>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

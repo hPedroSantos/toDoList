@@ -1,0 +1,9 @@
+CREATE DATABASE taskCenter;
+
+CREATE TABLE IF NOT EXISTS taskList (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    taskName VARCHAR(255) NOT NULL,
+    description TEXT,
+    creationDateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deadline DATE
+);
