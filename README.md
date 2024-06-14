@@ -10,15 +10,15 @@ Configurações Iniciais:
 1. Em backend/app.py, configure o caminho para os templates.
 2. Crie um arquivo .env com as variáveis de ambiente
   nomeclatura usada:
-    MYSQL_HOST=''
-    MYSQL_USER=''
-    MYSQL_PASSWORD=''
+    MYSQL_HOST='' -
+    MYSQL_USER='' -
+    MYSQL_PASSWORD='' -
     MYSQL_DB='taskCenter'
 
 ## Ferramentas usadas
-Python
-Flask
-MySQL
+Python;
+Flask;
+MySQL e
 Bootstrap
 
 ## OBS
