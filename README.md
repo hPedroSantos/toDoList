@@ -2,9 +2,8 @@
 
 ## Descrição:
 
-Página inicial com opção de visualizar tabela de tarefas ou criar uma nova tarefa.
-Tabela exibe colunas para ID, nome da tarefa, descrição, data de criação, meta de conclusão, checkbox para marcar como concluída e ações para editar ou excluir.
-Configurações Iniciais:
+Essa to-do list conta com uma página inicial com opção do usuário visualizar a tabela de tarefas ou criar uma nova tarefa.
+A Tabela exibe colunas para ID, nome da tarefa, descrição, data de criação, meta de conclusão, checkbox para marcar como concluída e ações para editar ou excluir.
 
 ## Configurações inciais
 1. Em backend/app.py, configure o caminho para os templates.
